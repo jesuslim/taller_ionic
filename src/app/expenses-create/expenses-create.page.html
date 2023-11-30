@@ -1,0 +1,31 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>expensesCreate</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <form [formGroup]="expenseForm" (keyup.enter)="guardarGasto(expenseForm.value)">
+
+    <ion-item>
+      <ion-label position="floating">ID: </ion-label>
+      <ion-input aria-label="ID" formControlName="ID"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Descripcion: </ion-label>
+      <ion-input aria-label="descripcion" formControlName="descripcion"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Cantidad gastada: </ion-label>
+      <ion-input aria-label="gasto" type="number" formControlName="gasto"></ion-input>
+    </ion-item>
+
+    <ion-button (click)="guardarGasto(expenseForm.value)">Guardar</ion-button>
+
+  </form>
+</ion-content>
